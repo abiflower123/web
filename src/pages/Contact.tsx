@@ -50,6 +50,7 @@ export default function Contact() {
   }, []);
 
   return (
+    <>
     <div className="pt-20 animate-fade-in">
       {/* Hero Section - Enhanced with Transparent Background */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-8">
@@ -719,5 +720,5 @@ export default function Contact() {
   </div>
 </section>
     </div>
-  );
+</>  );
 }
