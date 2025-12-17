@@ -23,7 +23,8 @@ export default function Portfolio() {
       title: 'Gnana Vidya Mandir',
       category: 'Websites',
       description: 'Educational institution website with student portal and information management',
-      image: 'https://shivatech.solutions/assets/images/website-image/gvm.png',
+      image: '/gvm.PNG',
+      placeholder: 'GVM Website',
       color: 'from-blue-500 to-blue-600',
       tech: ['React', 'Node.js', 'MongoDB'],
       link: 'https://gvm.edu',
@@ -33,7 +34,8 @@ export default function Portfolio() {
       title: 'Sree Vaikundar Polytechnic College',
       category: 'Websites',
       description: 'College website with course information, admissions, and campus updates',
-      image: '/logo.png',
+      image: '/svpc.png',
+      placeholder: 'College Website',
       color: 'from-purple-500 to-purple-600',
       tech: ['Next.js', 'TypeScript', 'PostgreSQL'],
       link: '#',
@@ -43,7 +45,8 @@ export default function Portfolio() {
       title: 'Travel Agency Website',
       category: 'Websites',
       description: 'Travel booking platform with tour packages and itinerary planning',
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop',
+      image: '/nanjiltravels.png',
+      placeholder: 'Travel Website',
       color: 'from-orange-500 to-orange-600',
       tech: ['Vue.js', 'Express', 'MySQL'],
       link: '#',
@@ -53,7 +56,8 @@ export default function Portfolio() {
       title: 'E-Commerce Website',
       category: 'Websites',
       description: 'Online shopping platform with product catalog and secure payment integration',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+      image: '/e.png',
+      placeholder: 'E-commerce Website',
       color: 'from-green-500 to-green-600',
       tech: ['React', 'Stripe', 'MongoDB'],
       link: '#',
@@ -63,7 +67,8 @@ export default function Portfolio() {
       title: 'AEC Co-Operative Stores',
       category: 'Websites',
       description: 'Cooperative store management and online shopping platform',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
+      image: '/co.png',
+      placeholder: 'Co-op Stores',
       color: 'from-red-500 to-red-600',
       tech: ['Angular', 'Node.js', 'Firebase'],
       link: '#',
@@ -73,7 +78,8 @@ export default function Portfolio() {
       title: 'Radiance IAS Academy',
       category: 'Websites',
       description: 'Educational coaching website with course materials and student portal',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop',
+      image: '/ias.png',
+      placeholder: 'IAS Academy',
       color: 'from-indigo-500 to-indigo-600',
       tech: ['React', 'GraphQL', 'PostgreSQL'],
       link: '#',
@@ -83,7 +89,8 @@ export default function Portfolio() {
       title: 'Swaasthya Ayurveda',
       category: 'Websites',
       description: 'Ayurvedic healthcare website with treatment information and appointment booking',
-      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&h=600&fit=crop',
+      image: '/aayur.png',
+      placeholder: 'Ayurveda Website',
       color: 'from-teal-500 to-teal-600',
       tech: ['Next.js', 'TypeScript', 'MongoDB'],
       link: '#',
@@ -93,7 +100,8 @@ export default function Portfolio() {
       title: 'Nanjil Jobs',
       category: 'Websites',
       description: 'Job portal with listings, applications, and employer dashboard',
-      image: 'https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=800&h=600&fit=crop',
+      image: '/nan.png',
+      placeholder: 'Job Portal',
       color: 'from-cyan-500 to-cyan-600',
       tech: ['Vue.js', 'Node.js', 'PostgreSQL'],
       link: '#',
@@ -103,7 +111,8 @@ export default function Portfolio() {
       title: 'Online Survey Platform',
       category: 'Websites',
       description: 'Survey creation and data collection platform with analytics dashboard',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      image: '/onlinesurvey.png',
+      placeholder: 'Survey Platform',
       color: 'from-pink-500 to-pink-600',
       tech: ['React', 'Express', 'MongoDB'],
       link: '#',
@@ -115,7 +124,8 @@ export default function Portfolio() {
       title: 'Hospital Management System',
       category: 'Web Apps',
       description: 'Comprehensive hospital management with patient records, billing, and appointment scheduling',
-      image: 'https://images.unsplash.com/photo-1516549655669-df6654e44780?w=800&h=600&fit=crop',
+      image: '/hms.jpg',
+      placeholder: 'Hospital System',
       color: 'from-blue-500 to-blue-600',
       tech: ['React', 'Node.js', 'MySQL'],
       link: '#',
@@ -125,17 +135,19 @@ export default function Portfolio() {
       title: 'Inventory and Accounts Management',
       category: 'Web Apps',
       description: 'Integrated inventory tracking with accounting and financial reporting',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+      image: '/in.jpg',
+      placeholder: 'Inventory System',
       color: 'from-purple-500 to-purple-600',
       tech: ['Angular', '.NET', 'SQL Server'],
       link: '#',
     },
     {
       id: 12,
-      title: 'College Management System',
+      title: 'Employee Management System',
       category: 'Web Apps',
-      description: 'Complete college administration with student, faculty, and course management',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop',
+      description: 'This web app is for the employees to sign in and make their daily attendance. They can view their attendance, leave, project timings reports',
+      image: '/emp.png',
+      placeholder: 'College System',
       color: 'from-orange-500 to-orange-600',
       tech: ['Vue.js', 'Django', 'PostgreSQL'],
       link: '#',
@@ -145,7 +157,8 @@ export default function Portfolio() {
       title: 'School/College/University Management',
       category: 'Web Apps',
       description: 'Educational institution ERP with attendance, grading, and academic planning',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop',
+      image: '/college.jpg',
+      placeholder: 'Education ERP',
       color: 'from-green-500 to-green-600',
       tech: ['React', 'Spring Boot', 'MySQL'],
       link: '#',
@@ -155,7 +168,8 @@ export default function Portfolio() {
       title: 'Job Application Portal',
       category: 'Web Apps',
       description: 'Advanced job portal with resume parsing, matching algorithms, and interview scheduling',
-      image: 'https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=800&h=600&fit=crop',
+      image: '/job.jpg',
+      placeholder: 'Job Portal System',
       color: 'from-red-500 to-red-600',
       tech: ['Next.js', 'Node.js', 'MongoDB'],
       link: '#',
@@ -167,7 +181,8 @@ export default function Portfolio() {
       title: 'Locate n Ride',
       category: 'Android Mobile Apps',
       description: 'Ride-hailing and vehicle tracking application with real-time location services',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
+      image: '/location.jpg',
+      placeholder: 'Ride App',
       color: 'from-indigo-500 to-indigo-600',
       tech: ['Kotlin', 'Firebase', 'Google Maps'],
       link: '#',
@@ -177,7 +192,8 @@ export default function Portfolio() {
       title: 'Doctor Locator',
       category: 'Android Mobile Apps',
       description: 'Healthcare app to find nearby doctors, book appointments, and access medical records',
-      image: 'https://images.unsplash.com/photo-1516549655669-df6654e44780?w=800&h=600&fit=crop',
+      image: '/doctorlocator.jpg',
+      placeholder: 'Healthcare App',
       color: 'from-teal-500 to-teal-600',
       tech: ['Java', 'Android SDK', 'SQLite'],
       link: '#',
@@ -187,7 +203,8 @@ export default function Portfolio() {
       title: 'Mobile Tracking',
       category: 'Android Mobile Apps',
       description: 'Device tracking and security application with remote monitoring features',
-      image: 'https://images.unsplash.com/photo-1516549655669-df6654e44780?w=800&h=600&fit=crop',
+      image: '/mobiletracking.jpg',
+      placeholder: 'Tracker App',
       color: 'from-cyan-500 to-cyan-600',
       tech: ['Java', 'GPS API', 'Push Notifications'],
       link: '#',
@@ -211,14 +228,47 @@ export default function Portfolio() {
 
   return (
     <div className="pt-20 animate-fade-in">
-      {/* Hero Banner Section - Enhanced */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      {/* Hero Banner Section - Enhanced with Transparent Background */}
+     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-8">
+        {/* Transparent Technology Background Layer */}
+        <div className="absolute inset-0 z-0">
+          {/* Main Transparent Tech Background Image */}
+          <div 
+            className="absolute inset-0 opacity-15"
+            style={{
+              backgroundImage: "url('/p.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              filter: 'brightness(1.1) contrast(1.1)',
+            }}
+          />
+          
+          {/* Multiple Layered Background Effects */}
+          <div 
+            className="absolute inset-0 opacity-15"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%)
+              `,
+            }}
+          />
+          
+          {/* Gradient Overlay to blend with the tech image */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-orange-50/60 dark:from-gray-900/70 dark:via-gray-800/80 dark:to-gray-900/70" />
+          
+          {/* Dark Mode Specific Overlay */}
+          <div className="absolute inset-0 hidden dark:block bg-gradient-to-br from-gray-900/50 via-gray-800/60 to-gray-900/50" />
+        </div>
+
         {/* Animated Background Particles */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(30)].map((_, i) => (
             <div
               key={`hero-particle-${i}`}
-              className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-orange-400/20 dark:from-blue-500/15 dark:to-orange-500/15"
+              className="absolute rounded-full bg-gradient-to-r from-blue-400/30 to-orange-400/30 dark:from-blue-500/25 dark:to-orange-500/25"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -226,7 +276,7 @@ export default function Portfolio() {
                 height: `${Math.random() * 8 + 2}px`,
                 animation: `floatParticle ${15 + Math.random() * 10}s ease-in-out infinite`,
                 animationDelay: `${Math.random() * 5}s`,
-                opacity: 0.3,
+                opacity: 0.4,
               }}
             />
           ))}
@@ -234,24 +284,29 @@ export default function Portfolio() {
 
         {/* Animated Gradient Orbs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/15 to-orange-500/15 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse-slow delay-1000" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse-slow delay-1000" />
+          
+          {/* Additional floating tech elements */}
+          <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-2xl animate-float-slow delay-500" />
+          <div className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-gradient-to-r from-teal-500/15 to-emerald-500/15 rounded-full blur-2xl animate-float-slow delay-700" />
         </div>
 
-        {/* Floating Code Elements */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          {['</>', '{ }', '()', '[]', '=>', ';', 'const', 'class', 'function'].map((code, i) => (
+        {/* Binary Code Animation Overlay */}
+        <div className="absolute inset-0 overflow-hidden opacity-15">
+          {[...Array(20)].map((_, i) => (
             <div
-              key={`code-${i}`}
-              className="absolute text-3xl font-mono text-blue-500 animate-float-slow"
+              key={`binary-hero-${i}`}
+              className="absolute font-mono text-blue-500 dark:text-cyan-400 text-sm md:text-base"
               style={{
-                left: `${10 + i * 8}%`,
-                top: `${20 + (i % 5) * 15}%`,
-                animationDelay: `${i * 0.6}s`,
-                animationDuration: `${20 + i * 2}s`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `floatTech ${20 + Math.random() * 15}s linear infinite`,
+                animationDelay: `${Math.random() * 10}s`,
+                opacity: 0.3,
               }}
             >
-              {code}
+              {`${Math.random() > 0.5 ? '1' : '0'}${Math.random() > 0.5 ? '1' : '0'}${Math.random() > 0.5 ? '1' : '0'}${Math.random() > 0.5 ? '1' : '0'}`}
             </div>
           ))}
         </div>
@@ -259,18 +314,18 @@ export default function Portfolio() {
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-up" className="text-center max-w-6xl mx-auto">
             {/* Header with Enhanced Design */}
-            <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm border border-white/20">
+            <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 rounded-full bg-gradient-to-r from-blue-100/80 to-orange-100/80 dark:from-blue-900/40 dark:to-orange-900/40 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 shadow-lg">
               <Sparkles className="h-5 w-5 text-orange-500 animate-pulse" />
               <span className="text-orange-500 font-semibold text-sm uppercase tracking-widest">
                 Showcasing Excellence
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent tracking-tight leading-tight animate-text-gradient">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent tracking-tight leading-tight animate-text-gradient drop-shadow-lg">
               Our Portfolio
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed max-w-4xl mx-auto text-gray-700 dark:text-gray-300 font-medium px-4 animate-slide-up delay-200 mb-12">
+            <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed max-w-4xl mx-auto text-gray-800 dark:text-gray-200 font-medium px-4 animate-slide-up delay-200 mb-12 backdrop-blur-sm bg-white/40 dark:bg-gray-900/50 p-8 rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-xl">
               Showcasing <span className="text-blue-500 font-semibold">innovative solutions</span> and 
               <span className="text-orange-500 font-semibold"> successful projects</span> delivered to satisfied clients worldwide
             </p>
@@ -278,8 +333,8 @@ export default function Portfolio() {
             {/* Portfolio Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-12 animate-slide-up delay-400">
               {portfolioStats.map((stat, index) => (
-                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 group">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-500/10 to-orange-500/10 mb-4 group-hover:rotate-12 transition-transform duration-300">
+                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 group backdrop-blur-sm bg-white/40 dark:bg-gray-900/50 p-6 rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-500/15 to-orange-500/15 mb-4 group-hover:rotate-12 transition-transform duration-300">
                     <div className="text-blue-500 dark:text-blue-400">
                       {stat.icon}
                     </div>
@@ -287,7 +342,7 @@ export default function Portfolio() {
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium mt-1">
+                  <div className="text-sm text-gray-700 dark:text-gray-300 font-medium mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -297,8 +352,8 @@ export default function Portfolio() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-blue-500 rounded-full flex justify-center">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+          <div className="w-6 h-10 border-2 border-blue-500 rounded-full flex justify-center backdrop-blur-sm bg-white/30 dark:bg-gray-900/40">
             <div className="w-1 h-3 bg-blue-500 rounded-full mt-2 animate-scroll-indicator" />
           </div>
         </div>
@@ -338,7 +393,7 @@ export default function Portfolio() {
 
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
               <Zap className="h-5 w-5 text-blue-500 animate-pulse" />
               <span className="text-blue-500 font-semibold">Browse Categories</span>
             </div>
@@ -355,10 +410,10 @@ export default function Portfolio() {
                 <button
                   key={category.name}
                   onClick={() => setSelectedCategory(category.name)}
-                  className={`group relative px-6 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 ${
+                  className={`group relative px-6 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-3 backdrop-blur-sm ${
                     selectedCategory === category.name
                       ? 'bg-gradient-to-r from-blue-500 to-orange-500 text-white shadow-xl'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 shadow-lg hover:shadow-xl'
+                      : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 shadow-lg hover:shadow-xl'
                   }`}
                 >
                   {/* Hover Effect */}
@@ -384,7 +439,7 @@ export default function Portfolio() {
             </div>
           </AnimatedSection>
 
-          {/* Projects Grid - Enhanced */}
+          {/* Projects Grid - Enhanced with Clean Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {filteredProjects.map((project, index) => (
               <div
@@ -397,47 +452,36 @@ export default function Portfolio() {
                     {/* Card Hover Effect */}
                     <div className={`absolute -inset-3 bg-gradient-to-r ${project.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
                     
-                    <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 h-full flex flex-col border border-gray-100 dark:border-gray-700 overflow-hidden">
-                      {/* Image Container */}
+                    <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50 overflow-hidden">
+                      {/* Image Container - Clean without shading */}
                       <div className="relative h-64 overflow-hidden">
-                        {/* Gradient Overlay */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${project.color}/20 z-10`} />
-                        
-                        {/* Project Image */}
+                        {/* Project Image - Clean display without overlays */}
                         <div className="relative h-full flex items-center justify-center">
-                          {project.image && !project.image.includes('unsplash') ? (
-                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
-                              <div className="mb-2 text-gray-400 dark:text-gray-500">
-                                <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                                </svg>
-                              </div>
-                              <span className="text-sm text-gray-500 dark:text-gray-400">
-                                {project.title}
-                              </span>
-                            </div>
-                          ) : (
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                            />
-                          )}
-                        </div>
-                        
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8 z-20">
-                          <Button
-                            to={project.link}
-                            variant="secondary"
-                            size="sm"
-                            className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg"
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            onError={(e) => {
+                              // Show placeholder if image fails to load
+                              e.currentTarget.style.display = 'none';
+                              const placeholder = document.getElementById(`placeholder-${project.id}`);
+                              if (placeholder) placeholder.classList.remove('hidden');
+                            }}
+                          />
+                          
+                          {/* Placeholder */}
+                          <div 
+                            id={`placeholder-${project.id}`}
+                            className="hidden absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800"
                           >
-                            <span className="flex items-center gap-2">
-                              View Details
-                              <ExternalLink className="h-4 w-4" />
-                            </span>
-                          </Button>
+                            <div className="mb-4 text-4xl font-bold bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+                              {project.placeholder}
+                            </div>
+                            <div className={`w-20 h-1 rounded-full bg-gradient-to-r ${project.color}`} />
+                            <div className="mt-4 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                              {project.category}
+                            </div>
+                          </div>
                         </div>
                         
                         {/* Category Badge */}
@@ -447,7 +491,13 @@ export default function Portfolio() {
                               ? 'bg-white/90 text-blue-700'
                               : 'bg-black/70 text-blue-300'
                           }`}>
-                            <Globe className="h-3 w-3" />
+                            {project.category === 'Websites' ? (
+                              <Globe className="h-3 w-3" />
+                            ) : project.category === 'Web Apps' ? (
+                              <Code className="h-3 w-3" />
+                            ) : (
+                              <Smartphone className="h-3 w-3" />
+                            )}
                             {project.category}
                           </span>
                         </div>
@@ -475,22 +525,12 @@ export default function Portfolio() {
                             {project.tech.map((tech, idx) => (
                               <span
                                 key={idx}
-                                className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 text-blue-700 dark:text-blue-300"
+                                className="px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-blue-50 to-orange-50 dark:from-blue-900/20 dark:to-orange-900/20 text-blue-700 dark:text-blue-300 backdrop-blur-sm"
                               >
                                 {tech}
                               </span>
                             ))}
                           </div>
-                        </div>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="px-6 pb-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-500 dark:text-gray-400">
-                            Click for details
-                          </span>
-                          <ArrowRight className="h-4 w-4 text-blue-500 transform group-hover:translate-x-2 transition-transform duration-300" />
                         </div>
                       </div>
 
@@ -541,7 +581,7 @@ export default function Portfolio() {
               Have a Project in Mind?
             </h2>
             
-            <p className="text-xl text-white/90 mb-10 leading-relaxed drop-shadow-md max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 mb-10 leading-relaxed drop-shadow-md max-w-3xl mx-auto backdrop-blur-sm bg-white/10 p-6 rounded-2xl">
               Let's work together to bring your ideas to life. Our experienced team is ready
               to help you build <span className="font-semibold">innovative solutions</span> that drive results.
             </p>
@@ -549,7 +589,7 @@ export default function Portfolio() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 to="/contact" 
-                className="bg-white text-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group"
+                className="bg-white text-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl group backdrop-blur-sm"
               >
                 <span className="flex items-center gap-2">
                   Start Your Project
@@ -577,7 +617,7 @@ export default function Portfolio() {
                 { number: '50+', label: 'Technologies Used' },
                 { number: '24/7', label: 'Support Available' },
               ].map((stat, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center backdrop-blur-sm bg-white/20 p-6 rounded-2xl border border-white/20">
                   <div className="text-3xl font-bold text-white drop-shadow-lg">
                     {stat.number}
                   </div>

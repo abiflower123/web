@@ -25,12 +25,14 @@ export default function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
+    // Your logo file is l.png in public folder
     const img = new Image();
-    img.src = '/logo.png';
+    img.src = '/l.png'; // Your logo file in public folder
     img.onload = () => {
       setTimeout(() => setLogoLoaded(true), 100);
     };
     img.onerror = () => {
+      console.log('Logo l.png not found');
       setTimeout(() => setLogoLoaded(true), 100);
     };
   }, []);
@@ -47,42 +49,59 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg py-3' 
-          : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm py-4'
+          ? 'bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl shadow-2xl py-3 border-b border-gray-200/30 dark:border-gray-700/30' 
+          : 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg py-4'
       }`}
     >
-      <div className="container mx-auto px-4">
+      {/* Animated background effect */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+            radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.15) 0%, transparent 40%)
+          `,
+        }} />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between">
+          {/* Logo Section */}
           <Link
             to="/"
-            className="flex items-center space-x-3 group"
+            className="flex items-center group relative"
           >
-            <div 
-              className={`transition-all duration-700 ${logoLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
-              style={{ animation: logoLoaded ? 'scaleIn 0.6s ease-out' : 'none' }}
-            >
-              <img 
-                src="/logo.png"
-                alt="Smark Solutions Logo" 
-                className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const fallback = e.currentTarget.nextElementSibling;
-                  if (fallback) fallback.classList.remove('hidden');
-                }}
-              />
-              <div className="hidden bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700 p-2.5 rounded-lg h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SS</span>
-              </div>
-            </div>
+            {/* Glow effect on hover */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className={`transition-all duration-700 delay-150 ${logoLoaded ? 'translate-x-0 opacity-100' : '-translate-x-2 opacity-0'}`}>
-              <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
-                Smark Solutions
-              </span>
+            <div 
+              className={`relative transition-all duration-700 ${
+                logoLoaded ? 'scale-100 opacity-100 rotate-0' : 'scale-95 opacity-0 -rotate-12'
+              }`}
+            >
+              {/* Logo container */}
+              <div className="relative">
+                {/* Logo container with gradient border */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-70 transition-opacity duration-500" />
+                
+                {/* Your l.png logo */}
+                <div className="relative bg-transparent p-1 rounded-lg transition-all duration-300">
+                  <img 
+                    src="/l.png" // Your logo file in public folder
+                    alt="Smark Solutions Logo" 
+                    className="h-16 w-auto md:h-20 object-contain group-hover:scale-105 transition-transform duration-300"
+                    style={{ maxHeight: '80px' }} // Medium size
+                    onError={(e) => {
+                      console.error('Failed to load logo: l.png');
+                      // You can add a fallback text here if needed
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </Link>
 
+          {/* Navigation and Actions */}
           <div className="flex items-center space-x-4">
             <nav className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link, index) => (
@@ -94,68 +113,109 @@ export default function Header() {
                 >
                   <Link
                     to={link.path}
-                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
+                    className={`relative px-5 py-2.5 text-sm font-semibold transition-all duration-300 group overflow-hidden ${
                       location.pathname === link.path
-                        ? 'text-accent dark:text-accent-400'
+                        ? 'text-blue-600 dark:text-blue-400'
                         : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                     }`}
                   >
+                    {/* Background effect on hover */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-orange-500/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-lg" />
+                    
                     {link.name}
+                    
+                    {/* Animated underline */}
                     <span
-                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-accent transform origin-center transition-transform duration-300 ${
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-orange-500 transform origin-center transition-transform duration-300 ${
                         location.pathname === link.path
-                          ? 'scale-x-100 bg-gradient-to-r from-accent to-accent'
+                          ? 'scale-x-100'
                           : 'scale-x-0 group-hover:scale-x-100'
                       }`}
                     />
-                    {/* Active item glowing effect */}
+                    
+                    {/* Active indicator */}
                     {location.pathname === link.path && (
-                      <span className="absolute bottom-0 left-1/4 w-1/2 h-0.5 bg-accent blur-sm animate-pulse" />
+                      <>
+                        <span className="absolute bottom-0 left-1/4 w-1/2 h-0.5 bg-blue-500/50 blur-sm animate-pulse" />
+                        <span className="absolute -top-1 right-1 h-2 w-2 bg-blue-500 rounded-full animate-ping opacity-75" />
+                      </>
                     )}
                   </Link>
                 </div>
               ))}
             </nav>
 
-            <div className={`transition-all duration-500 delay-700 ${logoLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
-              <ThemeToggle />
+            {/* Theme Toggle */}
+            <div className={`relative transition-all duration-500 delay-700 ${
+              logoLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+            }`}>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <ThemeToggle />
+              </div>
             </div>
 
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 ${
+              className={`lg:hidden p-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 relative group ${
                 logoLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
               }`}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-gray-700 dark:text-gray-300" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-700 dark:text-gray-300" />
-              )}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-orange-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div className="relative">
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                ) : (
+                  <Menu className="h-6 w-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                )}
+              </div>
             </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
             isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
-          <nav className="flex flex-col space-y-2 pb-4">
+          <nav className="flex flex-col space-y-2 pb-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl p-4 border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:translate-x-2 ${
+                className={`px-4 py-3.5 rounded-xl font-semibold transition-all duration-300 transform hover:translate-x-3 relative group overflow-hidden ${
                   location.pathname === link.path
-                    ? 'bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 text-accent dark:text-accent-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'bg-gradient-to-r from-blue-500/15 to-orange-500/15 text-blue-600 dark:text-blue-400'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-800/80 hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {link.name}
+                {/* Hover effect background */}
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-orange-500/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl" />
+                
+                <div className="relative flex items-center justify-between">
+                  <span>{link.name}</span>
+                  {location.pathname === link.path && (
+                    <div className="h-2 w-2 bg-blue-500 rounded-full animate-pulse" />
+                  )}
+                </div>
+                
+                {/* Active indicator */}
+                {location.pathname === link.path && (
+                  <span className="absolute left-0 top-1/2 transform -translate-y-1/2 h-6 w-1 bg-gradient-to-b from-blue-500 to-orange-500 rounded-full" />
+                )}
               </Link>
             ))}
+            
+            {/* Mobile menu footer */}
+            <div className="pt-4 mt-4 border-t border-gray-200/50 dark:border-gray-700/50">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                Transforming Ideas into Digital Reality
+              </p>
+            </div>
           </nav>
         </div>
       </div>
