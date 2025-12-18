@@ -18,6 +18,7 @@ import CustomCursor from './components/common/CustomCursor';
 import AnimatedBackground from './components/common/AnimatedBackground';
 import { ThemeProvider } from './contexts/ThemeContext';
 import FloatingParticles from './components/common/FloatingParticles';
+import BackToTop from './components/common/BackToTop';
 
 function App() {
   return (
@@ -45,7 +46,14 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          
+          {/* WhatsApp Chat - Positioned ABOVE */}
           <WhatsAppChat />
+          
+          {/* Back to Top - Positioned BELOW */}
+          <div className="fixed bottom-6 right-6 z-40">
+            <BackToTop />
+          </div>
         </div>
       </Router>
     </ThemeProvider>

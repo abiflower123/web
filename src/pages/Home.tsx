@@ -16,14 +16,14 @@ export default function Home() {
     {
       icon: <Code className="h-12 w-12" />,
       title: 'Web Designing',
-      description: 'Professional website development with modern design, responsive layouts, and SEO optimization.',
+      description: 'Professional website development with modern design, responsive layouts and SEO optimization.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500',
       color: 'from-blue-500 to-cyan-400',
     },
     {
       icon: <Brain className="h-12 w-12" />,
       title: 'AI / ML Solutions',
-      description: 'Cutting-edge AI and machine learning solutions for automation and data-driven insights.',
+      description: 'Cutting-edge AI and Machine Learning solutions for automation and data-driven insights.',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500',
       color: 'from-purple-500 to-pink-500',
     },
@@ -44,10 +44,12 @@ export default function Home() {
   ];
 
   const achievements = [
-    { number: 50, label: 'Projects Completed', suffix: '+', icon: <Target className="h-8 w-8" /> },
-    { number: 200, label: 'Students Trained', suffix: '+', icon: <Users className="h-8 w-8" /> },
+    { number: 90, label: 'Happy Clients', suffix: '+', icon: <Target className="h-8 w-8" /> },
+   
+    { number: 50, label: 'Projects Completed', suffix: '+', icon: <Award className="h-8 w-8" /> },
+     
     { number: 15, label: 'Technology Domains', suffix: '+', icon: <Zap className="h-8 w-8" /> },
-    { number: 5, label: 'Years Experience', suffix: '+', icon: <Award className="h-8 w-8" /> },
+    { number: 7, label: 'Years Experience', suffix: '+', icon: <Users className="h-8 w-8" /> },
   ];
 
   useEffect(() => {
@@ -235,7 +237,7 @@ export default function Home() {
               
               {/* Company Name */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent tracking-tight leading-tight animate-text-gradient drop-shadow-lg">
-                Smark Solutions
+                SMARK Solutions
               </h1>
               
               {/* Tagline */}
@@ -312,7 +314,7 @@ export default function Home() {
         {
           icon: <Code className="h-12 w-12" />,
           title: 'Web Designing',
-          description: 'Professional website development with modern design, responsive layouts, and SEO optimization.',
+          description: 'Professional website development with modern design, responsive layouts and SEO optimization.',
           image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500',
           color: 'from-blue-500 to-cyan-400',
           path: '/services/web-designing', // Your existing route
@@ -320,7 +322,7 @@ export default function Home() {
         {
           icon: <Brain className="h-12 w-12" />,
           title: 'AI / ML Solutions',
-          description: 'Cutting-edge AI and machine learning solutions for automation and data-driven insights.',
+          description: 'Cutting-edge AI and Machine Learning solutions for automation and data-driven insights.',
           image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500',
           color: 'from-purple-500 to-pink-500',
           path: '/services/ai-ml', // Your route is /services/ai-ml
@@ -406,7 +408,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-      {/* About Section */}
+     {/* About Section */}
 <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
   {/* Geometric Pattern */}
   <div className="absolute inset-0 z-0 opacity-5">
@@ -436,7 +438,7 @@ export default function Home() {
               {/* Professional About Us Image with Text Overlay */}
               <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  src="aaa.jpeg"
                   alt="About Us - Smark Solutions Team"
                   className="w-full h-full object-cover"
                 />
@@ -463,31 +465,12 @@ export default function Home() {
                       Innovating since 2017, empowering businesses and students with cutting-edge technology solutions
                     </p>
                     
-                    {/* Floating Stats */}
-                    <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm animate-float-slow">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                        <span>50+ Projects</span>
-                      </div>
-                    </div>
-                    
-                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm animate-float-slow delay-500">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                        <span>8 Years Experience</span>
-                      </div>
-                    </div>
+                    {/* Removed floating stats elements */}
                   </div>
                 </div>
               </div>
               
-              {/* Code Badges */}
-              <div className="absolute top-6 left-6 bg-black/80 backdrop-blur-sm text-green-400 px-4 py-2 rounded-lg text-sm font-mono border-l-4 border-green-500 animate-slide-in-left z-20">
-                {'<Innovation />'}
-              </div>
-              <div className="absolute bottom-6 right-6 bg-black/80 backdrop-blur-sm text-blue-400 px-4 py-2 rounded-lg text-sm font-mono border-l-4 border-blue-500 animate-slide-in-right delay-300 z-20">
-                {'<Technology />'}
-              </div>
+              {/* Removed code badges - Innovation and Technology tags */}
             </div>
           </div>
         </div>
@@ -523,7 +506,7 @@ export default function Home() {
           
           <div className="relative pl-8 animate-timeline-item delay-300">
             <div className="absolute left-0 top-2 w-4 h-4 bg-blue-400 rounded-full border-4 border-white dark:border-gray-800" />
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">2025 - Smark Solutions Launch</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">2025 - SMARK Solutions Launch</h3>
             <p className="text-gray-600 dark:text-gray-300">
               Expanded to assist students and research scholars with PhD guidance, projects, internships, and training.
             </p>
@@ -580,98 +563,93 @@ export default function Home() {
     </div>
   </div>
 </section>
-      {/* Achievements Section */}
-      <section 
-        ref={achievementsRef}
-        className="relative py-20 bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden"
-      >
-        {/* Animated Background */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-orange-500/10 animate-gradient-move" />
-          
-          {/* Floating Numbers */}
-          <div className="absolute inset-0 opacity-5">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={`number-${i}`}
-                className="absolute text-6xl font-bold text-blue-500 dark:text-blue-400 animate-float-slow"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${20 + Math.random() * 20}s`,
-                }}
-              >
-                {Math.floor(Math.random() * 9) + 1}
-              </div>
-            ))}
-          </div>
+  {/* Achievements Section */}
+<section 
+  ref={achievementsRef}
+  className="relative py-20 bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden"
+>
+  {/* Animated Background */}
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-orange-500/10 animate-gradient-move" />
+    
+    {/* Floating Numbers */}
+    <div className="absolute inset-0 opacity-5">
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={`number-${i}`}
+          className="absolute text-6xl font-bold text-blue-500 dark:text-blue-400 animate-float-slow"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${20 + Math.random() * 20}s`,
+          }}
+        >
+          {Math.floor(Math.random() * 9) + 1}
         </div>
+      ))}
+    </div>
+  </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30">
-              <TrendingUp className="h-5 w-5 text-orange-500" />
-              <span className="text-orange-500 font-semibold">Milestones</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Achievements
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Numbers that speak for our excellence and commitment to quality
-            </p>
-          </AnimatedSection>
+  <div className="container mx-auto px-4 relative z-10">
+    <AnimatedSection animation="fade-up" className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30">
+        <TrendingUp className="h-5 w-5 text-orange-500" />
+        <span className="text-orange-500 font-semibold">Milestones</span>
+      </div>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        Our Achievements
+      </h2>
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Numbers that speak for our excellence and commitment to quality
+      </p>
+    </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {achievements.map((achievement, index) => (
-              <AnimatedSection
-                key={index}
-                animation="scale"
-                delay={index * 200}
-              >
-                <div className="group relative">
-                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-400/20 via-orange-400/20 to-orange-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-95 group-hover:scale-100" />
-                  
-                  <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 text-center border border-gray-100 dark:border-gray-700">
-                    {/* Icon */}
-                    <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-br from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                      <div className="text-blue-500 dark:text-blue-400">
-                        {achievement.icon}
-                      </div>
-                    </div>
-                    
-                    {/* Counter */}
-                    <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                      {isVisible ? counters[index] : 0}
-                      <span className="text-3xl">{achievement.suffix}</span>
-                    </div>
-                    
-                    {/* Label */}
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                      {achievement.label}
-                    </h3>
-                    
-                    {/* Progress Bar */}
-                    <div className="mt-6">
-                      <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 rounded-full animate-progress-bar"
-                          style={{ animationDelay: `${index * 0.3}s` }}
-                        />
-                      </div>
-                    </div>
-                  </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      {achievements.map((achievement, index) => (
+        <AnimatedSection
+          key={index}
+          animation="scale"
+          delay={index * 200}
+        >
+          <div className="group relative">
+            <div className="absolute -inset-3 bg-gradient-to-r from-blue-400/20 via-orange-400/20 to-orange-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 scale-95 group-hover:scale-100" />
+            
+            <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 text-center border border-gray-100 dark:border-gray-700">
+              {/* Icon */}
+              <div className="inline-flex items-center justify-center p-4 rounded-full bg-gradient-to-br from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <div className="text-blue-500 dark:text-blue-400">
+                  {achievement.icon}
                 </div>
-              </AnimatedSection>
-            ))}
+              </div>
+              
+              {/* Stable Counter - No animation */}
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                {achievement.number}
+                <span className="text-3xl">{achievement.suffix}</span>
+              </div>
+              
+              {/* Label */}
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                {achievement.label}
+              </h3>
+              
+              {/* Static Progress Bar */}
+              <div className="mt-6">
+                <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-blue-500 via-blue-400 to-orange-500 rounded-full"
+                    style={{ width: '100%' }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Stats Counter */}
-          <AnimatedSection animation="fade-up" delay={600} className="mt-16">
-            <StatsCounter />
-          </AnimatedSection>
-        </div>
-      </section>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">

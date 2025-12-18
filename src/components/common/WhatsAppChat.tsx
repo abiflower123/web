@@ -11,7 +11,7 @@ export default function WhatsAppChat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 right-6 z-50 flex flex-col items-end gap-3">
       {isOpen && (
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 mb-2 animate-float-up w-80 max-w-[calc(100vw-3rem)]">
           <div className="flex items-center justify-between mb-4">

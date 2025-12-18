@@ -189,8 +189,8 @@ export default function About() {
             {/* Animated Stats */}
             <div className="flex flex-wrap justify-center gap-8 mb-12 animate-slide-up delay-400">
               {[
-                { number: '8+', label: 'Years Experience' },
-                { number: '500+', label: 'Happy Clients' },
+                { number: '7+', label: 'Years Experience' },
+                { number: '90+', label: 'Happy Clients' },
                 { number: '50+', label: 'Projects Completed' },
                 { number: '200+', label: 'Students Trained' },
               ].map((stat, index) => (
@@ -293,7 +293,7 @@ export default function About() {
               <AnimatedSection animation="slide-right" className="space-y-6">
                 <div className="space-y-4">
                   <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-text-slide-up backdrop-blur-sm bg-white/30 dark:bg-gray-900/30 p-4 rounded-xl">
-                    <span className="font-semibold text-blue-500">Smark Solutions</span> is a dynamic and evolving organization 
+                    <span className="font-semibold text-blue-500">SMARK Solutions</span> is a dynamic and evolving organization 
                     that specializes in providing comprehensive IT solutions and professional skill training. 
                     We are committed to helping businesses thrive in the digital age.
                   </p>
@@ -301,12 +301,12 @@ export default function About() {
                   <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-text-slide-up delay-100 backdrop-blur-sm bg-white/30 dark:bg-gray-900/30 p-4 rounded-xl">
                     Our journey began in 2017 with <span className="font-semibold text-orange-500">Shiva Technology Solutions</span>, 
                     where we focused on delivering technical solutions including website development, 
-                    software applications, and enterprise systems.
+                    software applications and enterprise systems.
                   </p>
                   
                   <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-text-slide-up delay-200 backdrop-blur-sm bg-white/30 dark:bg-gray-900/30 p-4 rounded-xl">
                     Today, we stand as a trusted partner for both businesses seeking innovative IT solutions 
-                    and students aspiring to excel in their academic and professional journeys.
+                    and students aspiring to excel in their academic and professional journey.
                   </p>
                 </div>
 
@@ -316,7 +316,7 @@ export default function About() {
                     { year: '2017', event: 'Founded Shiva Tech', color: 'bg-blue-500' },
                     { year: '2020', event: 'Expanded Services', color: 'bg-blue-400' },
                     { year: '2023', event: 'Student Programs', color: 'bg-orange-500' },
-                    { year: '2025', event: 'Smark Solutions', color: 'bg-orange-400' },
+                    { year: '2025', event: 'SMARK Solutions', color: 'bg-orange-400' },
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -378,7 +378,7 @@ export default function About() {
             {[
               {
                 title: 'IT Software Solutions',
-                description: 'We develop attractive, effective websites, e-commerce platforms, ERP systems, mobile applications, and custom software solutions using latest technologies.',
+                description: 'We develop attractive, effective websites, e-commerce platforms, ERP systems, mobile applications and custom software solutions using latest technologies.',
                 icon: <Code className="h-8 w-8" />,
                 color: 'from-blue-500 to-blue-600',
                 animation: 'slide-right',
@@ -476,7 +476,9 @@ export default function About() {
                 <div className="relative bg-gradient-to-br from-blue-50/90 to-orange-50/90 dark:from-gray-700/90 dark:to-gray-800/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100/50 dark:border-gray-700/50">
                   <div className="text-center mb-8">
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                      Our team comprises highly qualified and experienced professionals who bring
+                      Our team comprises of highly qualified and experienced professionals 
+                      
+                      ho bring
                       together years of industry expertise and technical knowledge. Each member is
                       passionate about delivering excellence and committed to helping our clients
                       and students achieve their goals.

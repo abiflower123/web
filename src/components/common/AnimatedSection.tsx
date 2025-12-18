@@ -3,7 +3,8 @@ import { useEffect, useRef, useState, ReactNode } from 'react';
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
-  animation?: 'fade-up' | 'fade-in' | 'slide-left' | 'slide-right' | 'scale';
+  animation?: string;
+
   delay?: number;
 }
 

@@ -115,7 +115,7 @@ export default function Courses() {
           domain: formData.domain,
           message: `Course Enrollment Request\n\nCollege: ${formData.college}\nDomain: ${formData.domain}`,
           subject: 'Course Enrollment - ' + formData.domain,
-          to_name: 'Smark Solutions',
+          to_name: 'SMARK Solutions',
         }
       );
 
@@ -240,70 +240,79 @@ export default function Courses() {
       </section>
 
       {/* Features Section */}
-      <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
-            `,
-          }} />
-        </div>
+<section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
+  <div className="absolute inset-0 z-0 opacity-10">
+    <div className="absolute inset-0" style={{
+      backgroundImage: `
+        radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
+      `,
+    }} />
+  </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
-              <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
-              <span className="text-blue-500 font-semibold">Why Choose Us</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-              Our Training Features
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Industry-focused training designed to make you job-ready
-            </p>
-          </AnimatedSection>
+  <div className="container mx-auto px-4 relative z-10">
+    <AnimatedSection animation="fade-up" delay={0} className="text-center mb-4">
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
+        <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
+        <span className="text-blue-500 font-semibold">Why Choose Us</span>
+      </div>
+    </AnimatedSection>
+    
+    <AnimatedSection animation="fade-up" delay={100} className="text-center mb-6">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+        Our Training Features
+      </h2>
+    </AnimatedSection>
+    
+    <AnimatedSection animation="fade-up" delay={200} className="text-center mb-12">
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Industry-focused training designed to make you job-ready
+      </p>
+    </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <AnimatedSection key={index} animation="scale" delay={index * 100}>
-                <div className="group relative h-full">
-                  <div className={`absolute -inset-3 bg-gradient-to-r ${feature.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
-                  
-                  <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50">
-                    <div className="relative mb-6">
-                      <div className={`absolute -inset-4 bg-gradient-to-r ${feature.color} rounded-full blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                      <div className={`relative p-5 rounded-2xl bg-gradient-to-br ${feature.color} text-white transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
-                        {feature.icon}
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                      {feature.description}
-                    </p>
-                    
-                    <div className="mt-6">
-                      <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
-                        <div 
-                          className="h-full bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-full animate-progress-bar"
-                          style={{ animationDelay: `${index * 0.3}s` }}
-                        />
-                      </div>
-                    </div>
-                    
-                    <div 
-                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                    />
-                  </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      {features.map((feature, index) => (
+        <AnimatedSection key={index} animation="fade-up" delay={300 + (index * 50)}>
+          <div className="group relative h-full">
+            <div className={`absolute -inset-2 bg-gradient-to-r ${feature.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
+            
+            <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50">
+              {/* Icon Container with Heading */}
+              <div className="relative mb-4">
+                <div className={`relative flex items-center justify-center gap-3 p-4 rounded-2xl bg-gradient-to-br ${feature.color} text-white transform group-hover:scale-105 transition-all duration-500`}>
+                  {feature.icon}
+                  <h3 className="text-lg font-bold text-white whitespace-nowrap">
+                    {feature.title}
+                  </h3>
                 </div>
-              </AnimatedSection>
-            ))}
+              </div>
+              
+              {/* Description */}
+              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm flex-grow">
+                {feature.description}
+              </p>
+              
+              {/* Progress Indicator */}
+              <div className="mt-6">
+                <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
+                  <div 
+                    className="h-full bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-full animate-progress-bar"
+                    style={{ animationDelay: `${index * 0.3}s` }}
+                  />
+                </div>
+              </div>
+              
+              {/* Hover Effect Line */}
+              <div 
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Courses Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">

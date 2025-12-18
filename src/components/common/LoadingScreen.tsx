@@ -15,9 +15,11 @@ export default function LoadingScreen() {
             setFadeOut(true);
             setTimeout(() => setIsLoading(false), 500);
           }, 300);
-          return 100;
+          return 100; // Ensure it never exceeds 100
         }
-        return prev + 3;
+        // Ensure we don't exceed 100
+        const newProgress = prev + 3;
+        return newProgress > 100 ? 100 : newProgress;
       });
     }, 100);
 

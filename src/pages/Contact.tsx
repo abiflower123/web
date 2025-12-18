@@ -218,166 +218,144 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Information Section - Enhanced */}
-      <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%)
-            `,
-          }} />
-        </div>
+     {/* Contact Information Section - Enhanced */}
+<section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
+  {/* Animated Background Pattern */}
+  <div className="absolute inset-0 z-0 opacity-10">
+    <div className="absolute inset-0" style={{
+      backgroundImage: `
+        radial-gradient(circle at 20% 80%, #3b82f6 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #f97316 0%, transparent 50%)
+      `,
+    }} />
+  </div>
 
-        {/* Floating Elements */}
-        <div className="absolute inset-0 z-0">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={`info-particle-${i}`}
-              className="absolute rounded-full bg-gradient-to-r from-blue-400/10 to-orange-400/10"
-              style={{
-                left: `${10 + (i * 8)}%`,
-                top: `${20 + (i % 4) * 15}%`,
-                width: `${Math.random() * 5 + 3}px`,
-                height: `${Math.random() * 5 + 3}px`,
-                animation: `floatParticle ${20 + Math.random() * 10}s ease-in-out infinite`,
-                animationDelay: `${i * 0.5}s`,
-                opacity: 0.2,
-              }}
-            />
-          ))}
-        </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <AnimatedSection animation="fade-up" className="text-center mb-16">
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
+        <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
+        <span className="text-blue-500 font-semibold">Reach Out</span>
+      </div>
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+        Contact Information
+      </h2>
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Multiple ways to get in touch with our expert team
+      </p>
+    </AnimatedSection>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
-              <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
-              <span className="text-blue-500 font-semibold">Reach Out</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-              Contact Information
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Multiple ways to get in touch with our expert team
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
-            {contactInfo.map((info, index) => (
-              <div key={index}>
-                <AnimatedSection animation="scale" delay={index * 100}>
-                  <div className="group relative h-full">
-                    {/* Card Hover Effect */}
-                    <div className={`absolute -inset-3 bg-gradient-to-r ${info.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
-                    
-                    <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 text-center h-full border border-gray-100/50 dark:border-gray-700/50">
-                      {/* Icon Container */}
-                      <div className="relative mb-6">
-                        <div className={`absolute -inset-4 bg-gradient-to-r ${info.color} rounded-full blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                        <div className={`relative p-5 rounded-2xl bg-gradient-to-br ${info.color} text-white transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
-                          {info.icon}
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">
-                        {info.title}
-                      </h3>
-
-                      {/* Details */}
-                      <div className="space-y-2 mb-6">
-                        {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-gray-600 dark:text-gray-300">
-                            {detail}
-                          </p>
-                        ))}
-                      </div>
-
-                      {/* Stat */}
-                      <div className="mt-auto pt-4 border-t border-gray-100/50 dark:border-gray-700/50">
-                        <span className="text-sm font-medium bg-gradient-to-r from-blue-500/10 to-orange-500/10 text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full">
-                          {info.stat}
-                        </span>
-                      </div>
-
-                      {/* Hover Effect Line */}
-                      <div 
-                        className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${info.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                      />
-                    </div>
-                  </div>
-                </AnimatedSection>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection animation="fade-up" delay={400} className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
-                <Send className="h-5 w-5 text-orange-500 animate-pulse" />
-                <span className="text-orange-500 font-semibold">Send Message</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Fill out the form below and we'll get back to you as soon as possible
-              </p>
-            </AnimatedSection>
-
-            <AnimatedSection animation="fade-up" delay={600}>
-              <div className="relative group">
-                {/* Form Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                
-                <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100/50 dark:border-gray-700/50 overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 z-0 opacity-5">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: `
-                        linear-gradient(90deg, #3b82f6 1px, transparent 1px),
-                        linear-gradient(0deg, #3b82f6 1px, transparent 1px)
-                      `,
-                      backgroundSize: '40px 40px',
-                    }} />
-                  </div>
-                  
-                  <div className="relative z-10">
-                    {/* Why Contact Us */}
-                    <div className="mb-8 text-center">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                        Why Choose Our Contact?
-                      </h3>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {contactReasons.map((reason, index) => (
-                          <div 
-                            key={index}
-                            className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-br from-blue-50/80 to-orange-50/80 dark:from-gray-700/80 dark:to-gray-800/80 backdrop-blur-sm"
-                          >
-                            <div className="text-blue-500 dark:text-blue-400">
-                              {reason.icon}
-                            </div>
-                            <span className="text-sm text-gray-700 dark:text-gray-300">
-                              {reason.text}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Contact Form */}
-                    <ContactForm />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
+      {contactInfo.map((info, index) => (
+        <div key={index} className="h-full">
+          <AnimatedSection animation="scale" delay={index * 100} className="h-full">
+            <div className="group relative h-full">
+              {/* Card Hover Effect - Only scale */}
+              <div className={`absolute -inset-3 bg-gradient-to-r ${info.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
+              
+              <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 text-center h-full border border-gray-100/50 dark:border-gray-700/50 flex flex-col min-h-[320px]">
+                {/* Icon Container with Heading */}
+                <div className="relative mb-5 flex-shrink-0">
+                  <div className={`relative flex items-center justify-center gap-3 p-4 rounded-2xl bg-gradient-to-br ${info.color} text-white transform group-hover:scale-105 transition-all duration-500 min-h-[75px]`}>
+                    {info.icon}
+                    <h3 className="text-lg font-bold text-white whitespace-nowrap">
+                      {info.title}
+                    </h3>
                   </div>
                 </div>
+
+                {/* Details - Made consistent height */}
+                <div className="space-y-2.5 mb-5 flex-grow">
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-700 dark:text-gray-300 text-sm leading-snug">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Stat - Fixed at bottom */}
+                <div className="pt-4 border-t border-gray-100/50 dark:border-gray-700/50 flex-shrink-0">
+                  <span className="text-xs font-medium bg-gradient-to-r from-blue-500/10 to-orange-500/10 text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full inline-block">
+                    {info.stat}
+                  </span>
+                </div>
+
+                {/* Hover Effect Line */}
+                <div 
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${info.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                />
               </div>
-            </AnimatedSection>
+            </div>
+          </AnimatedSection>
+        </div>
+      ))}
+    </div>
+
+    {/* Contact Form Section */}
+    <div className="max-w-5xl mx-auto">
+      <AnimatedSection animation="fade-up" delay={400} className="text-center mb-12">
+        <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
+          <Send className="h-5 w-5 text-orange-500 animate-pulse" />
+          <span className="text-orange-500 font-semibold">Send Message</span>
+        </div>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          Get in Touch
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Fill out the form below and we'll get back to you as soon as possible
+        </p>
+      </AnimatedSection>
+
+      <AnimatedSection animation="fade-up" delay={600}>
+        <div className="relative group">
+          {/* Form Glow Effect */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-orange-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+          
+          <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100/50 dark:border-gray-700/50 overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 z-0 opacity-5">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `
+                  linear-gradient(90deg, #3b82f6 1px, transparent 1px),
+                  linear-gradient(0deg, #3b82f6 1px, transparent 1px)
+                `,
+                backgroundSize: '40px 40px',
+              }} />
+            </div>
+            
+            <div className="relative z-10">
+              {/* Why Contact Us */}
+              <div className="mb-8 text-center">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                  Why Choose Us?
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {contactReasons.map((reason, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center gap-2 p-3 rounded-lg bg-gradient-to-br from-blue-50/80 to-orange-50/80 dark:from-gray-700/80 dark:to-gray-800/80 backdrop-blur-sm"
+                    >
+                      <div className="text-blue-500 dark:text-blue-400">
+                        {reason.icon}
+                      </div>
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        {reason.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Contact Form */}
+              <ContactForm />
+            </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
+    </div>
+  </div>
+</section>
 
-      {/* Map Section - Enhanced */}
+{/* Map Section - Enhanced */}
 <section className="relative py-20 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
   {/* Animated Background */}
   <div className="absolute inset-0 z-0">
@@ -425,9 +403,9 @@ export default function Contact() {
             
             <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-gray-100/50 dark:border-gray-700/50">
               <div className="aspect-w-16 aspect-h-9 h-96">
-                {/* Updated Google Maps Embed with exact Nagercoil coordinates */}
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.480654!2d77.4332891!3d8.183424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f1b3b0a7c1a3%3A0x4a2f8f8f8f8f8f8f!2sRST%20Building%2C%20Pattagasalianvilai%2C%20Nagercoil%2C%20Tamil%20Nadu%20629002!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                {/* Updated Google Maps Embed with your exact coordinates */}
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.4161597203056!2d77.4260664737435!3d8.160758601977703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04f12e5768f6d7%3A0x8e4801c21430b5b9!2sSMARK%20Solutions!5e0!3m2!1sen!2sin!4v1761225388272!5m2!1sen!2sin" 
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -438,89 +416,55 @@ export default function Contact() {
                   className="rounded-xl"
                 />
               </div>
-              
-              {/* Map Overlay Info */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        Smark Solutions - Nagercoil Office
-                      </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                        709, RST Building, Pattagasalianvilai, Nagercoil - 629002
-                      </p>
-                      <p className="text-xs text-green-600 dark:text-green-400 mt-1 flex items-center gap-1">
-                        <CheckCircle className="h-3 w-3" />
-                        Near Main Road, Easy to Find
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">One click to</div>
-                      <a 
-                        href="https://www.google.com/maps/dir/?api=1&destination=709+RST+Building+Pattagasalianvilai+Nagercoil+Tamil+Nadu+629002"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors flex items-center gap-1"
-                      >
-                        Get Directions
-                        <ArrowRight className="h-3 w-3" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* REMOVED: Entire Get Directions button box overlay */}
             </div>
           </div>
         </AnimatedSection>
 
-              {/* Location Details */}
-              <AnimatedSection animation="slide-right" delay={300}>
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/80 dark:to-gray-700/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                      Office Location Details
-                    </h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <div className="p-2 rounded-lg bg-blue-500/10">
-                          <MapPin className="h-5 w-5 text-blue-500" />
-                        </div>
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-white">Address</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
-                            709, RST Building, Pattagasalianvilai, Nagercoil - 629002
-                          </div>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="p-2 rounded-lg bg-orange-500/10">
-                          <Clock className="h-5 w-5 text-orange-500" />
-                        </div>
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-white">Business Hours</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
-                            Mon-Sat: 9:30 AM - 6:30 PM<br />
-                            2nd & 4th Saturday: Holiday
-                          </div>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="p-2 rounded-lg bg-green-500/10">
-                          <CheckCircle className="h-5 w-5 text-green-500" />
-                        </div>
-                        <div>
-                          <div className="font-medium text-gray-900 dark:text-white">Parking Available</div>
-                          <div className="text-sm text-gray-600 dark:text-gray-300">
-                            Ample parking space available nearby
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
+        {/* Location Details */}
+        <AnimatedSection animation="slide-right" delay={300}>
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/80 dark:to-gray-700/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                Office Location Details
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-blue-500/10">
+                    <MapPin className="h-5 w-5 text-blue-500" />
                   </div>
+                  <div>
+                    <div className="font-medium text-gray-900 dark:text-white">Address</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">
+                      709, RST Building, Pattagasalianvilai, Nagercoil - 629002
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-orange-500/10">
+                    <Clock className="h-5 w-5 text-orange-500" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900 dark:text-white">Business Hours</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">
+                      Mon - Sat: 9:30 AM - 6:30 PM<br />
+                      2nd & 4th Saturday: Holiday
+                    </div>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-green-500/10">
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-gray-900 dark:text-white">Parking Available</div>
+                    
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-                 <div className="bg-gradient-to-br from-blue-500/5 to-orange-500/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-500/20">
+            <div className="bg-gradient-to-br from-blue-500/5 to-orange-500/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-500/20">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <Zap className="h-5 w-5 text-blue-500" />
                 Quick Actions
@@ -538,16 +482,16 @@ export default function Contact() {
                   <ArrowRight className="h-5 w-5 text-blue-500 group-hover:translate-x-2 transition-transform" />
                 </a>
                 
-                {/* Get Directions - Moves to Map with exact location */}
+                {/* Get Directions */}
                 <a 
-                  href="https://www.google.com/maps/dir/?api=1&destination=709+RST+Building+Pattagasalianvilai+Nagercoil+Tamil+Nadu+629002"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Smark+Solutions+Pattagasalianvilai+Nagercoil"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-between p-4 rounded-xl bg-white/80 dark:bg-gray-800/80 hover:bg-orange-50 dark:hover:bg-gray-700/80 transition-colors group backdrop-blur-sm"
                 >
                   <span className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-orange-500" />
-                    Get Exact Directions
+                    Get Directions to SMARK Solutions
                   </span>
                   <ArrowRight className="h-5 w-5 text-orange-500 group-hover:translate-x-2 transition-transform" />
                 </a>
@@ -590,8 +534,7 @@ export default function Contact() {
     </div>
   </div>
 </section>
-
-      {/* Final CTA Section - Enhanced */}
+ {/* Final CTA Section - Enhanced */}
 <section className="relative py-20 bg-gradient-to-br from-blue-500 to-orange-500 overflow-hidden">
   {/* Animated Background */}
   <div className="absolute inset-0">
@@ -627,7 +570,7 @@ export default function Contact() {
       
       <p className="text-xl text-white/90 mb-10 leading-relaxed drop-shadow-md max-w-3xl mx-auto backdrop-blur-sm bg-white/10 p-6 rounded-2xl">
         Whether you need <span className="font-semibold">software solutions</span>, 
-        <span className="font-semibold"> professional training</span>, or 
+        <span className="font-semibold"> professional training</span> or 
         <span className="font-semibold"> expert guidance</span>, we're here to help you succeed.
       </p>
       
@@ -719,6 +662,7 @@ export default function Contact() {
     </AnimatedSection>
   </div>
 </section>
+     
     </div>
 </>  );
 }

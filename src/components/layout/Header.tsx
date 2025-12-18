@@ -87,7 +87,7 @@ export default function Header() {
                 <div className="relative bg-transparent p-1 rounded-lg transition-all duration-300">
                   <img 
                     src="/l.png" // Your logo file in public folder
-                    alt="Smark Solutions Logo" 
+                    alt="SMARK Solutions Logo" 
                     className="h-16 w-auto md:h-20 object-contain group-hover:scale-105 transition-transform duration-300"
                     style={{ maxHeight: '80px' }} // Medium size
                     onError={(e) => {
@@ -210,12 +210,7 @@ export default function Header() {
               </Link>
             ))}
             
-            {/* Mobile menu footer */}
-            <div className="pt-4 mt-4 border-t border-gray-200/50 dark:border-gray-700/50">
-              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                Transforming Ideas into Digital Reality
-              </p>
-            </div>
+            
           </nav>
         </div>
       </div>

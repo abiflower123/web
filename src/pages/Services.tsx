@@ -12,7 +12,7 @@ export default function Services() {
     {
       icon: <Code className="h-16 w-16" />,
       title: 'Web Designing',
-      description: 'Professional website development with modern design, responsive layouts, and seamless user experience. We create websites that drive results.',
+      description: 'Professional website development with modern design, responsive layouts and seamless user experience. We create websites that drive results.',
       features: ['Responsive Design', 'SEO Optimized', 'Fast Loading', 'Modern UI/UX'],
       link: '/services/web-designing',
       color: 'from-blue-500 to-blue-600',
@@ -22,7 +22,7 @@ export default function Services() {
     {
       icon: <Brain className="h-16 w-16" />,
       title: 'AI / ML Solutions',
-      description: 'Cutting-edge artificial intelligence and machine learning solutions to automate processes and gain valuable insights from your data.',
+      description: 'Cutting-edge Artificial Intelligence and Machine Learning solutions to automate processes and gain valuable insights from your data.',
       features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Deep Learning'],
       link: '/services/ai-ml',
       color: 'from-purple-500 to-purple-600',
@@ -42,7 +42,7 @@ export default function Services() {
     {
       icon: <Users className="h-16 w-16" />,
       title: 'Internship Programs',
-      description: 'Industry-focused internship programs providing hands-on experience with real projects and direct mentoring by professionals.',
+      description: 'Industry-focused internship programs providing hands-on experience with real-time projects and direct mentoring by professionals.',
       features: ['Live Projects', 'Professional Mentoring', 'Certificate', 'Industry Exposure'],
       link: '/services/internship',
       color: 'from-green-500 to-green-600',
@@ -52,7 +52,7 @@ export default function Services() {
     {
       icon: <BookOpen className="h-16 w-16" />,
       title: 'Training Courses',
-      description: 'Professional training courses delivered by experienced real-time working professionals covering latest technologies.',
+      description: 'Professional training courses delivered by experienced  working professionals covering latest technologies.',
       features: ['Expert Trainers', 'Practical Learning', 'Updated Curriculum', 'Certification'],
       link: '/services/courses',
       color: 'from-red-500 to-red-600',
@@ -202,8 +202,8 @@ export default function Services() {
             <div className="flex flex-wrap justify-center gap-8 mb-12 animate-slide-up delay-400">
               {[
                 { number: '6+', label: 'Service Categories', icon: <Code className="h-8 w-8" /> },
-                { number: '500+', label: 'Projects Completed', icon: <CheckCircle className="h-8 w-8" /> },
-                { number: '50+', label: 'Technologies', icon: <Zap className="h-8 w-8" /> },
+                { number: '50+', label: 'Projects Completed', icon: <CheckCircle className="h-8 w-8" /> },
+                { number: '15+', label: 'Technologies', icon: <Zap className="h-8 w-8" /> },
                 { number: '200+', label: 'Students Trained', icon: <GraduationCap className="h-8 w-8" /> },
               ].map((stat, index) => (
                 <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 group backdrop-blur-sm bg-white/40 dark:bg-gray-900/50 p-6 rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-lg">
@@ -231,136 +231,122 @@ export default function Services() {
           </div>
         </div>
       </section>
+{/* What We Offer Section - Enhanced */}
+<section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
+  {/* Animated Background Pattern */}
+  <div className="absolute inset-0 z-0 opacity-10">
+    <div className="absolute inset-0" style={{
+      backgroundImage: `
+        radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
+      `,
+    }} />
+  </div>
 
-      {/* What We Offer Section - Enhanced */}
-      <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
-            `,
-          }} />
-        </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <AnimatedSection animation="fade-up" delay={0} className="text-center mb-4">
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
+        <Zap className="h-5 w-5 text-blue-500 animate-pulse" />
+        <span className="text-blue-500 font-semibold">Our Expertise</span>
+      </div>
+    </AnimatedSection>
+    
+    <AnimatedSection animation="fade-up" delay={100} className="text-center mb-6">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+        What We Offer
+      </h2>
+    </AnimatedSection>
+    
+    <AnimatedSection animation="fade-up" delay={200} className="text-center mb-12">
+      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Comprehensive services designed to meet diverse needs of businesses and students
+      </p>
+    </AnimatedSection>
 
-        {/* Floating Tech Elements */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          {['</>', '{}', '[]', '()', '=>', ';', '//', '++'].map((symbol, i) => (
-            <div
-              key={`tech-symbol-${i}`}
-              className="absolute text-3xl font-mono text-blue-500 animate-float-slow"
-              style={{
-                left: `${15 + i * 10}%`,
-                top: `${15 + (i % 4) * 20}%`,
-                animationDelay: `${i * 0.7}s`,
-                animationDuration: `${20 + i * 3}s`,
-              }}
-            >
-              {symbol}
-            </div>
-          ))}
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
-              <Zap className="h-5 w-5 text-blue-500 animate-pulse" />
-              <span className="text-blue-500 font-semibold">Our Expertise</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-              What We Offer
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive services designed to meet diverse needs of businesses and students
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <AnimatedSection animation="scale" delay={index * 100}>
-                  <div className="group relative h-full">
-                    {/* Card Hover Effect */}
-                    <div className={`absolute -inset-3 bg-gradient-to-r ${service.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
-                    
-                    <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50 overflow-hidden">
-                      {/* Icon with Animation */}
-                      <div className="relative mb-6">
-                        <div className={`absolute -inset-4 bg-gradient-to-r ${service.color} rounded-full blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                        <div className={`relative p-5 rounded-2xl bg-gradient-to-br ${service.color} text-white transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
-                          {service.icon}
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-500 transition-colors">
-                        {service.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
-                        {service.description}
-                      </p>
-
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-3 mb-6">
-                        {service.stats.map((stat, idx) => (
-                          <div key={idx} className="text-center p-3 rounded-lg bg-gradient-to-br from-blue-50/80 to-orange-50/80 dark:from-gray-700/80 dark:to-gray-800/80 backdrop-blur-sm">
-                            <div className="text-xl font-bold bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-                              {stat}
-                            </div>
-                            <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                              {service.statLabels[idx]}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Features Tags */}
-                      <div className="mb-6">
-                        <div className="flex flex-wrap gap-2">
-                          {service.features.map((feature, idx) => (
-                            <span
-                              key={idx}
-                              className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full text-sm font-medium transform hover:scale-105 transition-transform duration-300 backdrop-blur-sm"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Animated Button */}
-                      <div className="mt-auto pt-6 border-t border-gray-100/50 dark:border-gray-700/50">
-                        <Button 
-                          to={service.link} 
-                          className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-orange-500 group-hover:text-white group-hover:border-transparent transition-all duration-300 relative overflow-hidden backdrop-blur-sm"
-                        >
-                          <span className="relative flex items-center justify-center">
-                            Explore Service
-                            <Sparkles className="ml-2 h-4 w-4 group-hover:rotate-180 transition-transform duration-500" />
-                          </span>
-                        </Button>
-                      </div>
-
-                      {/* Hover Effect Line */}
-                      <div 
-                        className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                      />
-                    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {services.map((service, index) => (
+        <div
+          key={index}
+          onMouseEnter={() => setHoveredCard(index)}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <AnimatedSection animation="fade-up" delay={300 + (index * 50)}>
+            <div className="group relative h-full">
+              {/* Card Hover Effect */}
+              <div className={`absolute -inset-3 bg-gradient-to-r ${service.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
+              
+              <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50 overflow-hidden">
+                {/* Icon Container with Heading - Heading placed in the colored bar */}
+                <div className="relative mb-6">
+                  <div className={`relative flex items-center justify-center gap-3 p-5 rounded-2xl bg-gradient-to-br ${service.color} text-white transform group-hover:scale-105 transition-all duration-500`}>
+                    {service.icon}
+                    <h3 className="text-xl font-bold text-white whitespace-nowrap">
+                      {service.title}
+                    </h3>
                   </div>
-                </AnimatedSection>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+                </div>
 
+                {/* Description */}
+                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
+                  {service.description}
+                </p>
+
+                {/* Stats - Fixed for Certified text */}
+                <div className="grid grid-cols-3 gap-2 mb-6">
+                  {service.stats.map((stat, idx) => (
+                    <div key={idx} className="text-center p-2 rounded-lg bg-gradient-to-br from-blue-50/80 to-orange-50/80 dark:from-gray-700/80 dark:to-gray-800/80 backdrop-blur-sm min-h-[70px] flex flex-col justify-center">
+                      <div className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent px-1">
+                        {stat}
+                      </div>
+                      <div className={`text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-1 px-1 ${
+                        // Special smaller text size for "Certified" to prevent wrapping
+                        service.statLabels[idx] === "Certified" ? "text-xs leading-tight" : ""
+                      }`}>
+                        {service.statLabels[idx]}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Features Tags */}
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {service.features.map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full text-sm font-medium transform hover:scale-105 transition-transform duration-300 backdrop-blur-sm break-words max-w-full"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Animated Button */}
+                <div className="mt-auto pt-6 border-t border-gray-100/50 dark:border-gray-700/50">
+                  <Button 
+                    to={service.link} 
+                    className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-orange-500 group-hover:text-white group-hover:border-transparent transition-all duration-300 relative overflow-hidden backdrop-blur-sm"
+                  >
+                    <span className="relative flex items-center justify-center">
+                      Explore Service
+                      <Sparkles className="ml-2 h-4 w-4 group-hover:rotate-180 transition-transform duration-500" />
+                    </span>
+                  </Button>
+                </div>
+
+                {/* Hover Effect Line */}
+                <div 
+                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Why Choose Section - Enhanced */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
         {/* Animated Background */}
@@ -394,7 +380,7 @@ export default function Services() {
                 <span className="text-orange-500 font-semibold">Why Choose Us</span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Benefits of Choosing Smark Solutions
+                Benefits of Choosing SMARK Solutions
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 We combine technical expertise with practical experience to deliver exceptional
