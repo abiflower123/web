@@ -297,13 +297,7 @@ export default function EnhancedHeroSection() {
                 <div className="relative group">
                   <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-blue-500/20 via-orange-500/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  {/* Since 2017 Badge - Positioned at top of logo - Responsive */}
-                  <div className="absolute left-1/2 -top-10 md:-top-12 lg:-top-14 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm md:text-base font-bold animate-badge-entrance z-20 shadow-xl backdrop-blur-sm border-2 border-white/20">
-                    <div className="flex items-center gap-2 whitespace-nowrap">
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                      Since 2017
-                    </div>
-                  </div>
+                 
                   
                   <div className="relative animate-logo-entrance hover:scale-105 transition-transform duration-300 pt-6">
                     <div className="relative">
