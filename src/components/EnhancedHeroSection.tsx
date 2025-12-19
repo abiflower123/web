@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -14,13 +15,13 @@ const Button: React.FC<ButtonProps> = ({ children, to, size, variant, className 
   const sizeClasses = size === "lg" ? "px-8 py-4 text-lg" : "";
   const variantClasses = variant === "outline" ? "" : "";
   
+  // Use Link instead of anchor tag
   return (
-    <a href={to} className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`}>
+    <Link to={to} className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`}>
       {children}
-    </a>
+    </Link>
   );
 };
-
 interface AnimatedSectionProps {
   children: React.ReactNode;
   animation?: string;
