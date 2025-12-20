@@ -92,9 +92,9 @@ export default function Services() {
         <div className="absolute inset-0 z-0">
           {/* Main Transparent Tech Background Image */}
           <div 
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-50"
             style={{
-              backgroundImage: "url('/o.jpeg')",
+              backgroundImage: "url('/t4.jpeg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',

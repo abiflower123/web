@@ -29,7 +29,7 @@ export default function LoadingScreen() {
   if (!isLoading) return null;
 
   return (
-    <div className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900 transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
       {/* Floating Balls */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -42,8 +42,8 @@ export default function LoadingScreen() {
               width: `${Math.random() * 6 + 3}px`,
               height: `${Math.random() * 6 + 3}px`,
               background: `radial-gradient(circle at 30% 30%, 
-                ${Math.random() > 0.5 ? '#3b82f6' : '#8b5cf6'} 0%, 
-                ${Math.random() > 0.5 ? '#60a5fa' : '#a855f7'} 50%, 
+                ${Math.random() > 0.5 ? '#1e40af' : '#1d4ed8'} 0%, 
+                ${Math.random() > 0.5 ? '#3b82f6' : '#60a5fa'} 50%, 
                 transparent 70%)`,
               animation: `float ${4 + Math.random() * 4}s ease-in-out infinite`,
               animationDelay: `${Math.random() * 2}s`,
@@ -56,7 +56,7 @@ export default function LoadingScreen() {
       {/* Logo with Spinning Circular Line */}
       <div className="relative z-10">
         {/* Outer Glow Effect */}
-        <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 rounded-full blur-xl" />
+        <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-blue-400/20 to-blue-500/20 rounded-full blur-xl" />
         
         {/* Main Container */}
         <div className="relative w-64 h-64">
@@ -66,8 +66,8 @@ export default function LoadingScreen() {
               background: `conic-gradient(
                 from ${progress * 3.6}deg,
                 transparent 0deg,
-                #3b82f6 180deg,
-                #8b5cf6 270deg,
+                #1e40af 180deg,
+                #3b82f6 270deg,
                 transparent 360deg
               ) border-box`,
               mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
@@ -80,7 +80,7 @@ export default function LoadingScreen() {
             {/* Ring Glow */}
             <div className="absolute inset-[-2px] rounded-full border-2 border-transparent"
               style={{
-                background: 'linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6) border-box',
+                background: 'linear-gradient(90deg, #1e40af, #3b82f6, #1e40af) border-box',
                 mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
                 WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
                 maskComposite: 'exclude',
@@ -98,7 +98,7 @@ export default function LoadingScreen() {
                 from ${-progress * 3.6}deg,
                 transparent 0deg,
                 #60a5fa 90deg,
-                #a855f7 270deg,
+                #93c5fd 270deg,
                 transparent 360deg
               ) border-box`,
               mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
@@ -113,7 +113,7 @@ export default function LoadingScreen() {
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-blue-400 to-purple-400"
+              className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-blue-300 to-blue-400"
               style={{
                 left: '50%',
                 top: '50%',
@@ -129,10 +129,10 @@ export default function LoadingScreen() {
           <div className="absolute inset-12 flex items-center justify-center">
             <div className="relative w-32 h-32">
               {/* Logo Background */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-900/90 to-purple-900/90 backdrop-blur-md border border-white/20 shadow-2xl" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-800/90 to-blue-900/90 backdrop-blur-md border border-white/20 shadow-2xl" />
               
               {/* Logo Glow */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-lg animate-pulse" />
+              <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/30 to-blue-400/30 rounded-full blur-lg animate-pulse" />
               
               {/* Logo */}
               <div className="relative w-full h-full rounded-full flex items-center justify-center">
@@ -156,8 +156,8 @@ export default function LoadingScreen() {
                   background: `conic-gradient(
                     from ${progress * 7.2}deg,
                     transparent 0deg,
-                    rgba(59, 130, 246, 0.5) 120deg,
-                    rgba(139, 92, 246, 0.5) 240deg,
+                    rgba(30, 64, 175, 0.5) 120deg,
+                    rgba(59, 130, 246, 0.5) 240deg,
                     transparent 360deg
                   ) border-box`,
                   mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
@@ -175,7 +175,7 @@ export default function LoadingScreen() {
             {[...Array(4)].map((_, i) => (
               <div
                 key={i}
-                className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
+                className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-300 to-blue-400"
                 style={{
                   animation: `pulse 1.2s ease-in-out infinite`,
                   animationDelay: `${i * 0.3}s`,
@@ -187,7 +187,7 @@ export default function LoadingScreen() {
 
         {/* Loading Percentage */}
         <div className="mt-8 text-center">
-          <div className="text-3xl font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-blue-300 bg-clip-text text-transparent">
+          <div className="text-3xl font-bold bg-gradient-to-r from-blue-200 via-blue-300 to-blue-200 bg-clip-text text-transparent">
             {progress}%
           </div>
           <div className="text-sm text-white/70 font-medium mt-2">

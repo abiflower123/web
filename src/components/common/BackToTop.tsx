@@ -20,7 +20,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollUp}
-      className={`p-3 rounded-full bg-gradient-to-r from-blue-500 to-orange-500 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 ${
+      className={`p-3 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 ${
         show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
       aria-label="Back to Top"

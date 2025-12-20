@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -22,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({ children, to, size, variant, className 
     </Link>
   );
 };
+
 interface AnimatedSectionProps {
   children: React.ReactNode;
   animation?: string;
@@ -32,7 +33,24 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, animation, 
   return <div className={className}>{children}</div>;
 };
 
-export default function EnhancedHeroSection() {
+interface EnhancedHeroSectionProps {
+  loadingComplete?: boolean;
+}
+
+export default function EnhancedHeroSection({ loadingComplete = true }: EnhancedHeroSectionProps) {
+  const [showAnimations, setShowAnimations] = useState(false);
+
+  useEffect(() => {
+    // Only show animations when loading is complete
+    if (loadingComplete) {
+      // Small delay to ensure loading screen is fully gone
+      const timer = setTimeout(() => {
+        setShowAnimations(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loadingComplete]);
+
   return (
     <>
       <style>{`
@@ -65,21 +83,6 @@ export default function EnhancedHeroSection() {
           }
           50% {
             filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 50px rgba(59, 130, 246, 0.3));
-          }
-        }
-
-        /* Badge Scale In Animation */
-        @keyframes badge-scale-in {
-          0% {
-            opacity: 0;
-            transform: scale(0) rotate(-180deg);
-          }
-          70% {
-            transform: scale(1.1) rotate(10deg);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1) rotate(0deg);
           }
         }
 
@@ -121,62 +124,6 @@ export default function EnhancedHeroSection() {
           }
         }
 
-        /* Background Animations */
-        @keyframes gradient-flow {
-          0%, 100% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.2; transform: scale(1); }
-          50% { opacity: 0.3; transform: scale(1.02); }
-        }
-
-        @keyframes gridMove {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(80px, 80px); }
-        }
-
-        @keyframes floatParticle {
-          0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
-          25% { transform: translate(10px, -10px) scale(1.05); opacity: 0.6; }
-          50% { transform: translate(-8px, -20px) scale(0.95); opacity: 0.5; }
-          75% { transform: translate(-12px, -10px) scale(1.03); opacity: 0.7; }
-        }
-
-        @keyframes floatTech {
-          0% { transform: translateY(0) translateX(0); opacity: 0; }
-          10% { opacity: 0.4; }
-          90% { opacity: 0.4; }
-          100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
-        }
-
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        @keyframes spin-slow-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
-        }
-
-        @keyframes shine {
-          0% { transform: translateX(-100%) skewX(-12deg); opacity: 0; }
-          50% { opacity: 0.6; }
-          100% { transform: translateX(200%) skewX(-12deg); opacity: 0; }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        @keyframes scroll-indicator {
-          0%, 100% { transform: translateY(0); opacity: 1; }
-          50% { transform: translateY(6px); opacity: 0.5; }
-        }
-
         /* Animation Classes */
         .animate-logo-entrance {
           animation: logo-entrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0s forwards;
@@ -184,12 +131,6 @@ export default function EnhancedHeroSection() {
 
         .animate-logo-glow-pulse {
           animation: logo-glow-pulse 3s ease-in-out 1s infinite;
-        }
-
-        .animate-badge-entrance {
-          opacity: 0;
-          animation: badge-scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards,
-                     bounce-slow 3s ease-in-out 1s infinite;
         }
 
         .animate-text-reveal {
@@ -206,25 +147,6 @@ export default function EnhancedHeroSection() {
           opacity: 0;
           animation: button-slide-right 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards;
         }
-
-        .animate-gradient-flow {
-          background-size: 200% 200%;
-          animation: gradient-flow 15s ease infinite;
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-
-        .animate-shine {
-          animation: shine 3s ease-in-out 1s infinite;
-        }
-
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-1000 { animation-delay: 1s; }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
-        .animate-spin-slow-reverse { animation: spin-slow-reverse 20s linear infinite; }
-        .animate-scroll-indicator { animation: scroll-indicator 2s ease-in-out infinite; }
       `}</style>
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
@@ -290,27 +212,24 @@ export default function EnhancedHeroSection() {
 
         <div className="container mx-auto px-4 relative z-20">
           <AnimatedSection className="text-center max-w-6xl mx-auto">
-            {/* Logo Container with Proper Spacing */}
+            {/* Logo Container */}
             <div className="flex flex-col items-center justify-center relative">
               <div className="relative mb-8">
-                
                 {/* Logo Container with Entrance Animation */}
                 <div className="relative group">
                   <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-blue-500/20 via-orange-500/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                 
-                  
-                  <div className="relative animate-logo-entrance hover:scale-105 transition-transform duration-300 pt-6">
+                  <div className={`relative hover:scale-105 transition-transform duration-300 pt-6 ${showAnimations ? 'animate-logo-entrance' : 'opacity-0'}`}>
                     <div className="relative">
                       {/* Enhanced Shine Effect - Reduced opacity */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shine" />
                       
-                      {/* Logo with Glow Pulse Animation - Reduced glow */}
-                      <div className="animate-logo-glow-pulse">
+                      {/* Logo with Glow Pulse Animation - Increased size only */}
+                      <div className={`${showAnimations ? 'animate-logo-glow-pulse' : ''}`}>
                         <img 
                           src="/logo.png" 
                           alt="Smark Solutions Logo" 
-                          className="h-80 w-80 md:h-90 md:w-90 object-contain relative z-10"
+                          className="h-56 w-56 md:h-64 md:w-64 object-contain relative z-10"
                           onError={(e) => {
                             const target = e.currentTarget as HTMLImageElement;
                             target.style.display = 'none';
@@ -320,11 +239,11 @@ export default function EnhancedHeroSection() {
                         />
                       </div>
                       
-                      {/* Fallback Logo */}
-                      <div id="logo-fallback" className="hidden relative z-10 h-80 w-80 md:h-90 md:w-90 animate-logo-glow-pulse">
+                      {/* Fallback Logo - Increased size */}
+                      <div id="logo-fallback" className={`hidden relative z-10 h-80 w-80 md:h-96 md:w-96 ${showAnimations ? 'animate-logo-glow-pulse' : ''}`}>
                         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/80 via-blue-500/80 to-orange-500/80 shadow-xl" />
                         <div className="relative h-full w-full flex items-center justify-center bg-gray-900/90 rounded-full m-1">
-                          <div className="text-6xl md:text-7xl font-bold text-white">
+                          <div className="text-7xl md:text-9xl font-bold text-white">
                             SS
                           </div>
                         </div>
@@ -334,8 +253,8 @@ export default function EnhancedHeroSection() {
                 </div>
               </div>
               
-              {/* Tagline - Reduced spacing and padding */}
-              <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-white font-medium px-4 animate-text-reveal backdrop-blur-md bg-white/5 p-6 rounded-xl border border-white/10 shadow-xl mb-8">
+              {/* Tagline */}
+              <p className={`text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-white font-medium px-4 backdrop-blur-md bg-white/5 p-6 rounded-xl border border-white/10 shadow-xl mb-8 ${showAnimations ? 'animate-text-reveal' : 'opacity-0'}`}>
                 A leading IT solutions and skill-training company delivering innovative
                 <span className="text-orange-300 font-semibold"> software services </span>
                 and empowering students with
@@ -348,7 +267,7 @@ export default function EnhancedHeroSection() {
               <Button 
                 to="/contact" 
                 size="lg" 
-                className="animate-button-slide-left relative overflow-hidden group bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-xl hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 backdrop-blur-sm border-2 border-white/20"
+                className={`relative overflow-hidden group bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-xl hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 backdrop-blur-sm border-2 border-white/20 ${showAnimations ? 'animate-button-slide-left' : 'opacity-0'}`}
               >
                 <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-shine" />
                 <span className="relative flex items-center text-lg font-semibold">
@@ -361,7 +280,7 @@ export default function EnhancedHeroSection() {
                 to="/services" 
                 size="lg" 
                 variant="outline"
-                className="animate-button-slide-right border-2 border-blue-400 text-white bg-blue-500/15 hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-blue-500/30 backdrop-blur-md"
+                className={`border-2 border-blue-400 text-white bg-blue-500/15 hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-blue-500/30 backdrop-blur-md ${showAnimations ? 'animate-button-slide-right' : 'opacity-0'}`}
               >
                 <span className="flex items-center text-lg font-semibold">
                   <Sparkles className="mr-2 h-5 w-5" />

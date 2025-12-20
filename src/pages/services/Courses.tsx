@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react';
 import AnimatedSection from '../../components/common/AnimatedSection';
 import Button from '../../components/common/Button';
 import emailjs from '@emailjs/browser';
-import { BookOpen, Users, Award, Clock, Brain, TrendingUp, Zap, Target, CheckCircle, ArrowRight, Sparkles, Cpu, Eye, MessageSquare, Database, Code, Shield } from 'lucide-react';
+import { BookOpen, Users, Award, Clock, Brain, TrendingUp, Zap, Target, CheckCircle, ArrowRight, Sparkles, Cpu, Eye, MessageSquare, Database, Code, Shield, AlertCircle } from 'lucide-react';
 
 export default function Courses() {
   const [formData, setFormData] = useState({
@@ -12,7 +12,131 @@ export default function Courses() {
     phone: '',
     domain: '',
   });
+  
+  const [alerts, setAlerts] = useState({
+    name: '',
+    college: '',
+    email: '',
+    phone: '',
+  });
+  
+  const [showAlerts, setShowAlerts] = useState({
+    name: false,
+    college: false,
+    email: false,
+    phone: false,
+  });
+  
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  // Validation functions
+  const validateName = (name: string): boolean => {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    return nameRegex.test(name) && name.trim().length > 0;
+  };
+
+const validateCollege = (college: string): boolean => {
+  // Remove 0-9 from regex if you don't want numbers
+  const collegeRegex = /^[A-Za-z\s.,'()&-]+$/;
+  return collegeRegex.test(college) && college.trim().length > 0;
+};
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    const phoneRegex = /^[\d\s+\-]+$/;
+    return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
+  };
+
+  const validateForm = (): boolean => {
+    const newAlerts = {
+      name: '',
+      college: '',
+      email: '',
+      phone: '',
+    };
+
+    let isValid = true;
+
+    // Validate name
+    if (!validateName(formData.name)) {
+      newAlerts.name = 'Name should contain only letters and spaces';
+      isValid = false;
+    }
+
+    // Validate college
+    if (!validateCollege(formData.college)) {
+      newAlerts.college = 'College name should contain letters, spaces, and common punctuation';
+      isValid = false;
+    }
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      newAlerts.email = 'Please enter a valid email address (e.g., example@domain.com)';
+      isValid = false;
+    }
+
+    // Validate phone
+    if (!validatePhone(formData.phone)) {
+      newAlerts.phone = 'Phone number should contain only numbers and be at least 10 digits';
+      isValid = false;
+    }
+
+    setAlerts(newAlerts);
+    setShowAlerts({
+      name: newAlerts.name !== '',
+      college: newAlerts.college !== '',
+      email: newAlerts.email !== '',
+      phone: newAlerts.phone !== '',
+    });
+    
+    return isValid;
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form before submitting
+    if (!validateForm()) {
+      return;
+    }
+    
+    setStatus('loading');
+
+    try {
+      emailjs.init('IblyrGZrui7lX-4DY');
+      
+      const result = await emailjs.send(
+        'service_s62yzrs',
+        'template_msd8aco',
+        {
+          from_name: formData.name,
+          college: formData.college,
+          from_email: formData.email,
+          phone: formData.phone,
+          domain: formData.domain,
+          message: `Course Enrollment Request\n\nCollege: ${formData.college}\nDomain: ${formData.domain}`,
+          subject: 'Course Enrollment - ' + formData.domain,
+          to_name: 'SMARK Solutions',
+        }
+      );
+
+      console.log('Enrollment sent successfully:', result);
+      setStatus('success');
+      setFormData({ name: '', college: '', email: '', phone: '', domain: '' });
+      setAlerts({ name: '', college: '', email: '', phone: '' });
+      setShowAlerts({ name: false, college: false, email: false, phone: false });
+
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Enrollment failed:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
+  };
 
   const domains = [
     {
@@ -96,40 +220,6 @@ export default function Courses() {
       description: 'Post-training support to help you succeed in your career'
     }
   ];
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    try {
-      emailjs.init('IblyrGZrui7lX-4DY');
-      
-      const result = await emailjs.send(
-        'service_s62yzrs',
-        'template_msd8aco',
-        {
-          from_name: formData.name,
-          college: formData.college,
-          from_email: formData.email,
-          phone: formData.phone,
-          domain: formData.domain,
-          message: `Course Enrollment Request\n\nCollege: ${formData.college}\nDomain: ${formData.domain}`,
-          subject: 'Course Enrollment - ' + formData.domain,
-          to_name: 'SMARK Solutions',
-        }
-      );
-
-      console.log('Enrollment sent successfully:', result);
-      setStatus('success');
-      setFormData({ name: '', college: '', email: '', phone: '', domain: '' });
-
-      setTimeout(() => setStatus('idle'), 5000);
-    } catch (error) {
-      console.error('Enrollment failed:', error);
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
-    }
-  };
 
   return (
     <div className="pt-20 animate-fade-in">
@@ -240,79 +330,79 @@ export default function Courses() {
       </section>
 
       {/* Features Section */}
-<section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
-  <div className="absolute inset-0 z-0 opacity-10">
-    <div className="absolute inset-0" style={{
-      backgroundImage: `
-        radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
-      `,
-    }} />
-  </div>
+      <section className="relative py-20 bg-white dark:bg-gray-800 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 30%, #3b82f6 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, #f97316 0%, transparent 50%)
+            `,
+          }} />
+        </div>
 
-  <div className="container mx-auto px-4 relative z-10">
-    <AnimatedSection animation="fade-up" delay={0} className="text-center mb-4">
-      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
-        <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
-        <span className="text-blue-500 font-semibold">Why Choose Us</span>
-      </div>
-    </AnimatedSection>
-    
-    <AnimatedSection animation="fade-up" delay={100} className="text-center mb-6">
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
-        Our Training Features
-      </h2>
-    </AnimatedSection>
-    
-    <AnimatedSection animation="fade-up" delay={200} className="text-center mb-12">
-      <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        Industry-focused training designed to make you job-ready
-      </p>
-    </AnimatedSection>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-      {features.map((feature, index) => (
-        <AnimatedSection key={index} animation="fade-up" delay={300 + (index * 50)}>
-          <div className="group relative h-full">
-            <div className={`absolute -inset-2 bg-gradient-to-r ${feature.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
-            
-            <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50">
-              {/* Icon Container with Heading */}
-              <div className="relative mb-4">
-                <div className={`relative flex items-center justify-center gap-3 p-4 rounded-2xl bg-gradient-to-br ${feature.color} text-white transform group-hover:scale-105 transition-all duration-500`}>
-                  {feature.icon}
-                  <h3 className="text-lg font-bold text-white whitespace-nowrap">
-                    {feature.title}
-                  </h3>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm flex-grow">
-                {feature.description}
-              </p>
-              
-              {/* Progress Indicator */}
-              <div className="mt-6">
-                <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
-                  <div 
-                    className="h-full bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-full animate-progress-bar"
-                    style={{ animationDelay: `${index * 0.3}s` }}
-                  />
-                </div>
-              </div>
-              
-              {/* Hover Effect Line */}
-              <div 
-                className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-              />
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection animation="fade-up" delay={0} className="text-center mb-4">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-orange-100 dark:from-blue-900/30 dark:to-orange-900/30 backdrop-blur-sm">
+              <Sparkles className="h-5 w-5 text-blue-500 animate-pulse" />
+              <span className="text-blue-500 font-semibold">Why Choose Us</span>
             </div>
+          </AnimatedSection>
+          
+          <AnimatedSection animation="fade-up" delay={100} className="text-center mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-blue-500 to-orange-500 bg-clip-text text-transparent">
+              Our Training Features
+            </h2>
+          </AnimatedSection>
+          
+          <AnimatedSection animation="fade-up" delay={200} className="text-center mb-12">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Industry-focused training designed to make you job-ready
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, index) => (
+              <AnimatedSection key={index} animation="fade-up" delay={300 + (index * 50)}>
+                <div className="group relative h-full">
+                  <div className={`absolute -inset-2 bg-gradient-to-r ${feature.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-700 scale-95 group-hover:scale-100`} />
+                  
+                  <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 h-full flex flex-col border border-gray-100/50 dark:border-gray-700/50">
+                    {/* Icon Container with Heading */}
+                    <div className="relative mb-4">
+                      <div className={`relative flex items-center justify-center gap-3 p-4 rounded-2xl bg-gradient-to-br ${feature.color} text-white transform group-hover:scale-105 transition-all duration-500`}>
+                        {feature.icon}
+                        <h3 className="text-lg font-bold text-white whitespace-nowrap">
+                          {feature.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm flex-grow">
+                      {feature.description}
+                    </p>
+                    
+                    {/* Progress Indicator */}
+                    <div className="mt-6">
+                      <div className="h-2 bg-gray-200/50 dark:bg-gray-700/50 rounded-full overflow-hidden backdrop-blur-sm">
+                        <div 
+                          className="h-full bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-full animate-progress-bar"
+                          style={{ animationDelay: `${index * 0.3}s` }}
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Hover Effect Line */}
+                    <div 
+                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                    />
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
-        </AnimatedSection>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Courses Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
@@ -488,10 +578,31 @@ export default function Courses() {
                           id="name"
                           required
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setFormData({ ...formData, name: value });
+                            // Clear name alert when typing
+                            if (alerts.name) {
+                              setAlerts({ ...alerts, name: '' });
+                              setShowAlerts({ ...showAlerts, name: false });
+                            }
+                          }}
+                          onBlur={() => {
+                            // Validate name on blur
+                            const isValid = validateName(formData.name);
+                            const message = isValid ? '' : 'Name should contain only letters and spaces';
+                            setAlerts({ ...alerts, name: message });
+                            setShowAlerts({ ...showAlerts, name: !isValid });
+                          }}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm"
                           placeholder="Your Full Name"
                         />
+                        {showAlerts.name && alerts.name && (
+                          <div className="mt-2 flex items-start gap-2 text-amber-600 dark:text-amber-400 text-sm">
+                            <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                            <span>{alerts.name}</span>
+                          </div>
+                        )}
                       </div>
 
                       <div className="group">
@@ -503,10 +614,31 @@ export default function Courses() {
                           id="college"
                           required
                           value={formData.college}
-                          onChange={(e) => setFormData({ ...formData, college: e.target.value })}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setFormData({ ...formData, college: value });
+                            // Clear college alert when typing
+                            if (alerts.college) {
+                              setAlerts({ ...alerts, college: '' });
+                              setShowAlerts({ ...showAlerts, college: false });
+                            }
+                          }}
+                         onBlur={() => {
+  // Validate college on blur
+  const isValid = validateCollege(formData.college);
+  const message = isValid ? '' : 'College name should contain only letters, spaces, and common punctuation (no numbers)';
+  setAlerts({ ...alerts, college: message });
+  setShowAlerts({ ...showAlerts, college: !isValid });
+}}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm"
                           placeholder="Your College Name"
                         />
+                        {showAlerts.college && alerts.college && (
+                          <div className="mt-2 flex items-start gap-2 text-amber-600 dark:text-amber-400 text-sm">
+                            <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                            <span>{alerts.college}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
 
@@ -520,10 +652,31 @@ export default function Courses() {
                           id="email"
                           required
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setFormData({ ...formData, email: value });
+                            // Clear email alert when typing
+                            if (alerts.email) {
+                              setAlerts({ ...alerts, email: '' });
+                              setShowAlerts({ ...showAlerts, email: false });
+                            }
+                          }}
+                          onBlur={() => {
+                            // Validate email on blur
+                            const isValid = validateEmail(formData.email);
+                            const message = isValid ? '' : 'Please enter a valid email address (e.g., example@domain.com)';
+                            setAlerts({ ...alerts, email: message });
+                            setShowAlerts({ ...showAlerts, email: !isValid });
+                          }}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm"
                           placeholder="your.email@example.com"
                         />
+                        {showAlerts.email && alerts.email && (
+                          <div className="mt-2 flex items-start gap-2 text-amber-600 dark:text-amber-400 text-sm">
+                            <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                            <span>{alerts.email}</span>
+                          </div>
+                        )}
                       </div>
 
                       <div className="group">
@@ -535,10 +688,31 @@ export default function Courses() {
                           id="phone"
                           required
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => {
+                            const value = e.target.value;
+                            setFormData({ ...formData, phone: value });
+                            // Clear phone alert when typing
+                            if (alerts.phone) {
+                              setAlerts({ ...alerts, phone: '' });
+                              setShowAlerts({ ...showAlerts, phone: false });
+                            }
+                          }}
+                          onBlur={() => {
+                            // Validate phone on blur
+                            const isValid = validatePhone(formData.phone);
+                            const message = isValid ? '' : 'Phone number should contain only numbers and be at least 10 digits';
+                            setAlerts({ ...alerts, phone: message });
+                            setShowAlerts({ ...showAlerts, phone: !isValid });
+                          }}
                           className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm"
                           placeholder="+91 12345 67890"
                         />
+                        {showAlerts.phone && alerts.phone && (
+                          <div className="mt-2 flex items-start gap-2 text-amber-600 dark:text-amber-400 text-sm">
+                            <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                            <span>{alerts.phone}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
 

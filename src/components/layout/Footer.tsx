@@ -80,13 +80,13 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 text-primary-400 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400">709, RST Building, Pattagasalianvilai, Nagercoil - 629002</span>
               </li>
-              <li className="flex items-center space-x-3 text-sm transition-all duration-500 delay-200 hover:translate-x-1">
-                <Phone className="h-5 w-5 text-primary-400 flex-shrink-0" />
+              <li className="flex items-start space-x-3 text-sm transition-all duration-500 delay-200 hover:translate-x-1">
+                <Phone className="h-5 w-5 text-primary-400 flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <a href="tel:+918300123435" className="text-gray-400 hover:text-primary-400 transition-colors">
                     +91 8300 123435
                   </a>
-                  <a href="tel:04652469848" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  <a href="tel:04652469848" className="text-gray-400 hover:text-primary-400 transition-colors pl-3">
                     04652 469848
                   </a>
                 </div>

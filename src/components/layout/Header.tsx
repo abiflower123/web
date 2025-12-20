@@ -81,7 +81,7 @@ export default function Header() {
               {/* Logo container */}
               <div className="relative">
                 {/* Logo container with gradient border */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-orange-500 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-70 transition-opacity duration-500" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-150 to-blue-150 rounded-xl blur opacity-0 group-hover:opacity-70 transition-opacity duration-500" />
                 
                 {/* Your l.png logo */}
                 <div className="relative bg-transparent p-1 rounded-lg transition-all duration-300">

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { X } from 'lucide-react';
 
 // WhatsApp logo SVG
 const WhatsAppIcon = ({ className = "h-7 w-7" }) => (
@@ -14,7 +13,6 @@ const WhatsAppIcon = ({ className = "h-7 w-7" }) => (
 );
 
 export default function WhatsAppChat() {
-  const [isOpen, setIsOpen] = useState(false);
   const phoneNumber = '918300123435';
 
   const handleWhatsAppClick = () => {
@@ -24,37 +22,8 @@ export default function WhatsAppChat() {
 
   return (
     <div className="fixed bottom-20 right-6 z-50 flex flex-col items-end gap-3">
-      {isOpen && (
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 mb-2 animate-float-up w-80 max-w-[calc(100vw-3rem)]">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="bg-green-500 text-white p-2 rounded-full">
-                <WhatsAppIcon className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">WhatsApp Chat</h3>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-            Hi there! 👋 How can we help you today?
-          </p>
-          <button
-            onClick={handleWhatsAppClick}
-            className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3 rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            Open WhatsApp
-          </button>
-        </div>
-      )}
-
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleWhatsAppClick}
         className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-full shadow-2xl hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-110 animate-bounce-slow group"
         aria-label="WhatsApp Chat"
       >

@@ -80,13 +80,13 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           {/* Main Transparent Tech Background Image */}
           <div 
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-50"
             style={{
-              backgroundImage: "url('/ab.jpeg')",
+              backgroundImage: "url('/t4.jpeg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              filter: 'brightness(1.1) contrast(1.1)',
+              
             }}
           />
           
